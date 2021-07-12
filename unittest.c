@@ -6,7 +6,7 @@
 /*   By: bagovic <bagovic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 10:52:34 by bagovic           #+#    #+#             */
-/*   Updated: 2021/07/12 17:33:12 by bagovic          ###   ########.fr       */
+/*   Updated: 2021/07/12 18:27:35 by bagovic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -294,6 +294,7 @@ void	run_all_tests(void)
 	test_memmove("Hello", "World", 5);
 	printf("\n");
 	test_strlcpy("Hello, World!", 5);
+	test_strlcpy("lorem", 15);
 	test_strlcpy("Hello\0, World!", 10);
 	test_strlcpy("Hello, World", 0);
 	printf("\n");

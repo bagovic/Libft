@@ -6,7 +6,7 @@
 /*   By: bagovic <bagovic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 15:19:33 by bagovic           #+#    #+#             */
-/*   Updated: 2021/07/07 15:21:30 by bagovic          ###   ########.fr       */
+/*   Updated: 2021/07/12 18:19:52 by bagovic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_isalnum(int c)
 		return (1);
 	else if (c > 64 && c < 91)
 		return (1);
-	else if (c > 96 && c < 122)
+	else if (c > 96 && c < 123)
 		return (1);
 	return (0);
 }
