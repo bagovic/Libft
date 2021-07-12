@@ -1,0 +1,57 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: bagovic <bagovic@student.42.fr>            +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/07/06 15:12:24 by bagovic           #+#    #+#              #
+#    Updated: 2021/07/12 17:32:28 by bagovic          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+NAME = libft.a
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror
+SRC = ft_memset.c\
+ft_bzero.c\
+ft_memcpy.c\
+ft_isalpha.c\
+ft_isdigit.c\
+ft_isalnum.c\
+ft_isascii.c\
+ft_isprint.c\
+ft_strlen.c\
+ft_memmove.c\
+ft_strlcpy.c\
+ft_strlcat.c
+
+all: $(NAME)
+
+$(NAME):
+	$(CC) $(CFLAGS) -c $(SRC)
+	ar r $(NAME) $(SRC:.c=.o)
+
+clean:
+	rm -f *.o
+fclean: clean
+	rm -f $(NAME)
+re: fclean all
+
+
+
+UT_SRC = main.c\
+unittest.c
+
+dclean: fclean
+	rm -fr *.dSYM
+	rm -fr .vscode
+
+unittest: fclean
+	$(CC) $(CFLAGS) -o unittest.o $(UT_SRC) $(SRC)
+	./unittest.o
+	norminette $(SRC) libft.h
+
+quicktest: fclean
+	$(CC) -o unittest.o $(UT_SRC) $(SRC)
+	./unittest.o
