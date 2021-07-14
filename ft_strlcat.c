@@ -6,7 +6,7 @@
 /*   By: bagovic <bagovic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 14:48:18 by bagovic           #+#    #+#             */
-/*   Updated: 2021/07/14 11:04:13 by bagovic          ###   ########.fr       */
+/*   Updated: 2021/07/14 12:14:23 by bagovic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,9 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	while (src[srclen] != '\0')
 		srclen++;
 	c = dstlen;
-	if(dstlen >= dstsize)
-		totallen = dstsize + srclen;
-	else
-		totallen = dstlen + srclen;
+	if (dstlen >= dstsize)
+		return (dstsize + srclen);
+	totallen = dstlen + srclen;
 	if ((int)dstsize - (int)dstlen > 0)
 	{
 		while (c - dstlen < dstsize - dstlen - 1 && src[c - dstlen] != '\0')

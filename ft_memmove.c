@@ -6,7 +6,7 @@
 /*   By: bagovic <bagovic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 16:52:59 by bagovic           #+#    #+#             */
-/*   Updated: 2021/07/07 17:17:02 by bagovic          ###   ########.fr       */
+/*   Updated: 2021/07/14 12:11:56 by bagovic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,29 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	char		temp_array[509];
-	char		*str_dest_pointer;
-	const char	*str_src_pointer;
+	char		*destpointer;
+	const char	*srcpointer;
 	size_t		c;
 
-	str_dest_pointer = dest;
-	str_src_pointer = src;
+	destpointer = dest;
+	srcpointer = src;
 	c = 0;
-	while (c < n)
+	if (destpointer == NULL && srcpointer == NULL)
+		return (NULL);
+	if (destpointer > srcpointer)
 	{
-		temp_array[c] = str_src_pointer[c];
-		c++;
+		while ((int)--n > -1)
+		{
+			destpointer[n] = srcpointer[n];
+		}
 	}
-	c = 0;
-	while (c < n)
+	else
 	{
-		str_dest_pointer[c] = temp_array[c];
-		c++;
+		while (c < n)
+		{
+			destpointer[c] = srcpointer[c];
+			c++;
+		}
 	}
-	return (dest);
+	return (destpointer);
 }
