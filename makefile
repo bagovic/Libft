@@ -6,7 +6,7 @@
 #    By: bagovic <bagovic@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/06 15:12:24 by bagovic           #+#    #+#              #
-#    Updated: 2021/07/14 15:26:37 by bagovic          ###   ########.fr        #
+#    Updated: 2021/07/14 15:29:18 by bagovic          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,8 @@ ft_strlcpy.c\
 ft_strlcat.c\
 ft_toupper.c\
 ft_tolower.c\
-ft_strchr.c
+ft_strchr.c\
+ft_strrchr.c
 
 all: $(NAME)
 
