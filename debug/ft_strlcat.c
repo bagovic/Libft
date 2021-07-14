@@ -6,7 +6,7 @@
 /*   By: bagovic <bagovic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 14:48:18 by bagovic           #+#    #+#             */
-/*   Updated: 2021/07/12 18:38:06 by bagovic          ###   ########.fr       */
+/*   Updated: 2021/07/12 18:50:53 by bagovic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,11 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		dst[c] = '\0';
 	}
 	return (return_size);
+}
+int main(){
+	char *dest;
+dest = (char *)malloc(sizeof(*dest) * 15);
+memset(dest, 'r', 15);
+ft_strlcat(dest, "lorem ipsum dolor sit amet", 5);
+	return(0);
 }
