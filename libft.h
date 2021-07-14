@@ -6,7 +6,7 @@
 /*   By: bagovic <bagovic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 14:54:33 by bagovic           #+#    #+#             */
-/*   Updated: 2021/07/14 11:15:07 by bagovic          ###   ########.fr       */
+/*   Updated: 2021/07/14 15:28:26 by bagovic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,13 @@ int			ft_isdigit(int c);
 int			ft_isalnum(int c);
 int			ft_isascii(int c);
 int			ft_isprint(int c);
+int			ft_toupper(int c);
+int			ft_tolower(int c);
 size_t		ft_strlen(const char *s);
 size_t		ft_strlcpy(char *dest, const char *src, size_t size);
 size_t		ft_strlcat(char *dst, const char *src, size_t dstsize);
+char		*ft_strchr(const char *s, int c);
+char		*ft_strrchr(const char *s, int c);
 
 void		run_all_tests(void);
 
