@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bagovic <bagovic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/14 14:58:25 by bagovic           #+#    #+#             */
-/*   Updated: 2021/07/14 18:31:52 by bagovic          ###   ########.fr       */
+/*   Created: 2021/07/14 18:31:24 by bagovic           #+#    #+#             */
+/*   Updated: 2021/07/14 19:06:09 by bagovic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char *s, int c)
-{
-	char	*pointer;
-	int		counter;
+#include <stdio.h>
 
+void	*ft_memchr(const void *s, int c, size_t n)
+{
+	const unsigned char	*sp;
+	int					counter;
+
+	sp = s;
 	counter = 0;
-	while (s[counter] != '\0')
+	while (counter < (int)n)
 	{
-		if (s[counter] == c)
-			break ;
+		if ((unsigned char)sp[counter] == (unsigned char)c)
+			return ((void *)&sp[counter]);
 		counter++;
 	}
-	if (s[counter] == c)
-	{
-		pointer = (char *)&s[counter];
-		return (pointer);
-	}
-	return (0);
+	return (NULL);
 }
