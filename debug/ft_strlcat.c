@@ -6,11 +6,14 @@
 /*   By: bagovic <bagovic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 14:48:18 by bagovic           #+#    #+#             */
-/*   Updated: 2021/07/12 18:50:53 by bagovic          ###   ########.fr       */
+/*   Updated: 2021/07/14 09:31:31 by bagovic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
@@ -38,10 +41,18 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	}
 	return (return_size);
 }
-int main(){
-	char *dest;
-dest = (char *)malloc(sizeof(*dest) * 15);
-memset(dest, 'r', 15);
-ft_strlcat(dest, "lorem ipsum dolor sit amet", 5);
-	return(0);
+int main()
+{
+	char	*dest;
+	int		arg;
+
+	alarm(5);
+	if (!(dest = (char *)malloc(sizeof(*dest) * 15)))
+		return (0);
+	memset(dest, 0, 15);
+	dest[10] = 'a';
+	ft_strlcat(dest, "lorem ipsum dolor sit amet", 0);
+	write(1, "\n", 1);
+	write(1, dest, 15);
+	return (0);
 }
