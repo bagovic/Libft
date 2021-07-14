@@ -6,35 +6,38 @@
 /*   By: bagovic <bagovic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 14:48:18 by bagovic           #+#    #+#             */
-/*   Updated: 2021/07/12 18:38:06 by bagovic          ###   ########.fr       */
+/*   Updated: 2021/07/14 11:03:43 by bagovic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t	return_size;
-	size_t	dst_size;
-	size_t	src_size;
+	size_t	totallen;
+	size_t	dstlen;
+	size_t	srclen;
 	int		c;
 
-	dst_size = 0;
-	src_size = 0;
-	while (dst[dst_size] != '\0')
-		dst_size++;
-	while (src[src_size] != '\0')
-		src_size++;
-	c = dst_size;
-	return_size = dst_size + src_size;
-	if ((int)size - (int)dst_size > 0)
+	dstlen = 0;
+	srclen = 0;
+	while (dst[dstlen] != '\0')
+		dstlen++;
+	while (src[srclen] != '\0')
+		srclen++;
+	c = dstlen;
+	if(dstlen >= dstsize)
+		totallen = dstsize + srclen;
+	else
+		totallen = dstlen + srclen;
+	if ((int)dstsize - (int)dstlen > 0)
 	{
-		while (c - dst_size < size - dst_size - 1 && src[c - dst_size] != '\0')
+		while (c - dstlen < dstsize - dstlen - 1 && src[c - dstlen] != '\0')
 		{
-			dst[c] = src[c - dst_size];
+			dst[c] = src[c - dstlen];
 			c++;
 		}
 		dst[c] = '\0';
 	}
-	return (return_size);
+	return (totallen);
 }
