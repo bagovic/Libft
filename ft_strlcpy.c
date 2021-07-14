@@ -6,7 +6,7 @@
 /*   By: bagovic <bagovic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 16:09:05 by bagovic           #+#    #+#             */
-/*   Updated: 2021/07/12 18:27:18 by bagovic          ###   ########.fr       */
+/*   Updated: 2021/07/14 11:05:31 by bagovic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	size_t	src_size;
 	size_t	c;
 
+	if (dest == NULL || src == NULL)
+		return (0);
 	c = 0;
 	src_size = 0;
 	while (src[src_size] != '\0')
