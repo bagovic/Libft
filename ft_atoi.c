@@ -6,14 +6,14 @@
 /*   By: bagovic <bagovic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 10:12:01 by bagovic           #+#    #+#             */
-/*   Updated: 2021/07/15 21:02:10 by bagovic          ###   ########.fr       */
+/*   Updated: 2021/07/15 21:03:05 by bagovic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "libft.h"
 
-static int	ft_get_num(const char *nptr, int c, int sign)
+static int	ft_num(const char *nptr, int c, int sign)
 {
 	int	num;
 
@@ -54,5 +54,5 @@ int	ft_atoi(const char *nptr)
 			return (0);
 		c++;
 	}
-	return (ft_get_num(nptr, c, sign));
+	return (ft_num(nptr, c, sign));
 }
