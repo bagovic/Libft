@@ -1,16 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   .unittest.c                                        :+:      :+:    :+:   */
+/*   unittest.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bagovic <bagovic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 10:52:34 by bagovic           #+#    #+#             */
-/*   Updated: 2021/07/14 14:39:28 by bagovic          ###   ########.fr       */
+/*   Updated: 2021/07/15 20:59:35 by bagovic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
 #include "libft.h"
@@ -200,7 +201,7 @@ void	test_strlcpy(const char *src, size_t size)
 		printf("KO.\n");
 }
 
-void	test_strlcat(char *dst, const char *src, size_t size)
+/* void	test_strlcat(char *dst, const char *src, size_t size)
 {
 	char	dst_strlcat[509];
 	char	dst_ft_strlcat[509];
@@ -222,11 +223,19 @@ void	test_strlcat_ft(char *dst, const char *src, size_t size)
 {
 	strlcat(dst, src, size);
 	puts(dst);
+} */
+
+void ftest_atoi()
+{
+	char *s1 = "\t\r\n\f+123245";
+	char *s2 = "1234424534632";
+	printf("%d", atoi(s1));
 }
 
 void	run_all_tests(void)
 {
-	printf("---BEGIN UNIT TEST---\n");
+	ftest_atoi();
+/* 	printf("---BEGIN UNIT TEST---\n");
 	test_memset("This is string.h library function", 42, 5);
 	test_memset("This is string.h library function", 36, 7);
 	test_memset("This is string.h library function", 119, 10);
@@ -307,5 +316,5 @@ void	run_all_tests(void)
 	test_strlcat(dst, src, 1);
 	strcpy(dst, "Hello"); strcpy(src, "World");
 	test_strlcat(dst, src, 20);
-	printf("---END UNIT TEST---\n");
-}
+	printf("---END UNIT TEST--\n");*/
+} 

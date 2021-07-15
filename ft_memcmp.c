@@ -6,7 +6,7 @@
 /*   By: bagovic <bagovic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 19:11:06 by bagovic           #+#    #+#             */
-/*   Updated: 2021/07/15 09:28:56 by bagovic          ###   ########.fr       */
+/*   Updated: 2021/07/15 15:04:40 by bagovic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,18 +24,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	while (counter < (int)n)
 	{
 		if ((unsigned char)s1p[counter] != (unsigned char)s2p[counter])
-		{
-			if ((unsigned char)s1p[counter] > (unsigned char)s2p[counter])
-				return (1);
-			else if ((unsigned char)s1p[counter] < (unsigned char)s2p[counter])
-				return (-1);
-		}
-		if (s1p[counter] == '\0' && s2p[counter] != '\0')
-			return (-1);
-		else if (s1p[counter] != '\0' && s2p[counter] == '\0')
-			return (1);
-		else if (s1p[counter] == '\0' && s2p[counter] == '\0')
-			return (0);
+			return (s1p[counter] - s2p[counter]);
 		counter++;
 	}
 	return (0);
