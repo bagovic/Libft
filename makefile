@@ -6,7 +6,7 @@
 #    By: bagovic <bagovic@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/06 15:12:24 by bagovic           #+#    #+#              #
-#    Updated: 2021/07/15 14:10:59 by bagovic          ###   ########.fr        #
+#    Updated: 2021/07/17 16:25:03 by bagovic          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,8 @@ ft_strncmp.c\
 ft_memchr.c\
 ft_memcmp.c\
 ft_strnstr.c\
-ft_atoi.c
+ft_atoi.c\
+ft_calloc.c
 
 all: $(NAME)
 
