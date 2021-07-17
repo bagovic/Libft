@@ -6,7 +6,7 @@
 /*   By: bagovic <bagovic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 14:54:33 by bagovic           #+#    #+#             */
-/*   Updated: 2021/07/17 16:25:16 by bagovic          ###   ########.fr       */
+/*   Updated: 2021/07/17 18:52:03 by bagovic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ size_t		ft_strlcat(char *dst, const char *src, size_t dstsize);
 char		*ft_strchr(const char *s, int c);
 char		*ft_strrchr(const char *s, int c);
 char		*ft_strnstr(const char *haystack, const char *needle, size_t len);
+char		*ft_strdup(const char *s1);
 
 void		run_all_tests(void);
 
