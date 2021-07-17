@@ -52,10 +52,6 @@ re: fclean all
 UT_SRC = main.c\
 unittest.c
 
-dclean: fclean
-	rm -fr *.dSYM
-	rm -fr .vscode
-
 t: fclean
 	cd /Users/bagovic/Desktop/Libft//libft-unit-test-master ; make re ; make f ; cd ..
 	bash /Users/bagovic/Desktop/Libft/libft-war-machine-master/grademe.sh
