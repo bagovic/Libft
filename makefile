@@ -6,7 +6,7 @@
 #    By: bagovic <bagovic@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/06 15:12:24 by bagovic           #+#    #+#              #
-#    Updated: 2021/07/21 10:13:23 by bagovic          ###   ########.fr        #
+#    Updated: 2021/07/21 11:46:55 by bagovic          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,8 @@ ft_strnstr.c\
 ft_atoi.c\
 ft_calloc.c\
 ft_strdup.c\
-ft_substr.c
+ft_substr.c\
+ft_strjoin.c
 
 all: $(NAME)
 

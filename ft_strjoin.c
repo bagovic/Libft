@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bagovic <bagovic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/21 10:09:20 by bagovic           #+#    #+#             */
-/*   Updated: 2021/07/21 11:10:41 by bagovic          ###   ########.fr       */
+/*   Created: 2021/07/21 11:12:10 by bagovic           #+#    #+#             */
+/*   Updated: 2021/07/21 12:12:13 by bagovic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,29 @@
 #include <stdlib.h>
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*substr;
-	int		subcount;
+	char	*joinstr;
+	size_t	s1len;
+	size_t	s2len;
+	size_t	count;
 
-	substr = malloc(len + 1);
-	if (substr == NULL || s == NULL)
+	s1len = ft_strlen(s1);
+	s2len = ft_strlen(s2);
+	joinstr = malloc(s1len + s2len + 1);
+	if (joinstr == NULL || s1 == NULL || s2 == NULL)
 		return (NULL);
-	subcount = 0;
-	while (subcount < (int)len && start < ft_strlen(s))
+	count = 0;
+	while (count < s1len)
 	{
-		substr[subcount] = s[start];
-		subcount++;
-		start++;
+		joinstr[count] = s1[count];
+		count++;
 	}
-	substr[subcount] = '\0';
-	return (substr);
+	while (count - s1len < s2len)
+	{
+		joinstr[count] = s2[count - s1len];
+		count++;
+	}
+	joinstr[count] = '\0';
+	return (joinstr);
 }
