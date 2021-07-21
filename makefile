@@ -6,7 +6,7 @@
 #    By: bagovic <bagovic@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/06 15:12:24 by bagovic           #+#    #+#              #
-#    Updated: 2021/07/17 18:57:54 by bagovic          ###   ########.fr        #
+#    Updated: 2021/07/21 10:13:23 by bagovic          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,8 @@ ft_memcmp.c\
 ft_strnstr.c\
 ft_atoi.c\
 ft_calloc.c\
-ft_strdup.c
+ft_strdup.c\
+ft_substr.c
 
 all: $(NAME)
 
@@ -54,7 +55,7 @@ re: fclean all
 UT_SRC = main.c\
 unittest.c
 
-t: fclean
+f: fclean
 	cd /Users/bagovic/Desktop/Libft//libft-unit-test-master ; make re ; make f ; cd ..
 	make fclean
 	bash /Users/bagovic/Desktop/Libft/libft-war-machine-master/grademe.sh
