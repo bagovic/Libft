@@ -1,2 +1,5 @@
 /libft-war-machine-master
 /libft-unit-test-master
+.vscode/
+ft_strtrim
+ft_strtrim.dSYM/
