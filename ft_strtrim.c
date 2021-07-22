@@ -6,7 +6,7 @@
 /*   By: bagovic <bagovic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/21 12:37:28 by bagovic           #+#    #+#             */
-/*   Updated: 2021/07/21 15:44:25 by bagovic          ###   ########.fr       */
+/*   Updated: 2021/07/22 14:35:58 by bagovic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,48 +18,27 @@
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*trimstr;
-	size_t	s1len;
-	size_t	setlen;
+	size_t	len;
 	size_t	count;
 	size_t	setcount;
 
-	s1len = ft_strlen(s1);
-	setlen = ft_strlen(set);
-	trimstr = malloc(s1len + 1);
-	if (trimstr == NULL)
+	trimstr = ft_strdup(s1);
+	if (trimstr == NULL || set == NULL)
 		return (NULL);
-	ft_strlcpy(trimstr, s1, s1len + 1);
+	len = ft_strlen(s1);
 	count = 0;
-	while (count < s1len)
+	while (count < ft_strlen(s1))
 	{
-		setcount = 0;
-		while (setcount < setlen)
+		setcount = -1;
+		while (++setcount < ft_strlen(set))
 		{
 			if (trimstr[0] == set[setcount])
-			{
 				ft_memmove(&trimstr[0], &trimstr[1], ft_strlen(trimstr));
-				s1len = ft_strlen(trimstr);
-				//trimstr[s1len] = '\0';
-			}
-			if (trimstr[s1len - 1] == set[setcount])
-			{
+			if (trimstr[len - 1] == set[setcount])
 				ft_strlcpy(trimstr, trimstr, ft_strlen(trimstr));
-				s1len = ft_strlen(trimstr);
-			}
-			setcount++;
+			len = ft_strlen(trimstr);
 		}
 		count++;
 	}
-	return (trimstr);
+	return (ft_strdup(trimstr));
 }
-/* #include <string.h>
-int	main(void)
-{
-	char *s1 = "  \t \t \n   \n\n\n\t";
-	char *s2 = "";
-	char *ret = ft_strtrim(s1, " \n\t");
-	puts(ret);
-	char str[] = "abcdefg";
-	ft_strlcpy(&str, &str, ft_strlen(str));
-	puts(str);
-} */
