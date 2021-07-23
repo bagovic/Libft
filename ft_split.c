@@ -6,13 +6,26 @@
 /*   By: bagovic <bagovic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/22 14:44:07 by bagovic           #+#    #+#             */
-/*   Updated: 2021/07/22 20:20:39 by bagovic          ###   ########.fr       */
+/*   Updated: 2021/07/23 13:20:39 by bagovic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include "libft.h"
+
+static	char	**ft_realloc(char **arr, size_t oldsize, size_t newsize)
+{
+	char	**arrcpy;
+
+	arrcpy = malloc(oldsize * sizeof (char *));
+	ft_memcpy(arrcpy, arr, oldsize * sizeof (char *));
+	free(arr);
+	arr = malloc(newsize * sizeof (char *));
+	ft_memcpy(arr, arrcpy, oldsize * sizeof (char *));
+	free(arrcpy);
+	return (arr);
+}
 
 char	**ft_split(char const *s, char c)
 {
@@ -22,22 +35,23 @@ char	**ft_split(char const *s, char c)
 	size_t	count;
 
 	start = 0;
-	count = 0;
-	subs = 0;
-	arr = malloc(subs);
+	count = -1;
+	subs = 1;
+	arr = malloc(subs * sizeof (char *));
 	if (arr == NULL || s == NULL)
 		return (NULL);
-	while (count <= ft_strlen(s))
+	arr[subs - 1] = NULL;
+	while (++count <= ft_strlen(s) && ft_strlen(s) > 1)
 	{
 		if (s[start] != c && (s[count] == c || s[count] == '\0'))
 		{
-			arr = realloc(arr, ++subs * sizeof(char *));
+			arr = ft_realloc(arr, subs, subs + 1);
 			arr[subs - 1] = ft_substr(s, start, count - start);
+			arr[++subs - 1] = NULL;
 			start = count;
 		}
 		else if (s[count] != c && s[start] == c)
 			start = count;
-		count++;
 	}
 	return (arr);
 }
