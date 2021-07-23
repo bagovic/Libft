@@ -6,7 +6,7 @@
 #    By: bagovic <bagovic@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/06 15:12:24 by bagovic           #+#    #+#              #
-#    Updated: 2021/07/22 14:45:08 by bagovic          ###   ########.fr        #
+#    Updated: 2021/07/23 13:42:59 by bagovic          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,8 @@ ft_strdup.c\
 ft_substr.c\
 ft_strjoin.c\
 ft_strtrim.c\
-ft_split.c
+ft_split.c\
+ft_itoa.c
 
 all: $(NAME)
 
