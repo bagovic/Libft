@@ -6,7 +6,7 @@
 #    By: bagovic <bagovic@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/06 15:12:24 by bagovic           #+#    #+#              #
-#    Updated: 2021/07/23 18:36:43 by bagovic          ###   ########.fr        #
+#    Updated: 2021/07/26 18:27:20 by bagovic          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,8 @@ ft_strtrim.c\
 ft_split.c\
 ft_itoa.c\
 ft_strmapi.c\
-ft_striteri.c
+ft_striteri.c\
+ft_putchar_fd.c\
 
 all: $(NAME)
 

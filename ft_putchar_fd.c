@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bagovic <bagovic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/23 18:36:19 by bagovic           #+#    #+#             */
-/*   Updated: 2021/07/26 18:27:51 by bagovic          ###   ########.fr       */
+/*   Created: 2021/07/26 18:24:26 by bagovic           #+#    #+#             */
+/*   Updated: 2021/07/26 18:27:27 by bagovic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
-{
-	unsigned int	count;
+#include <unistd.h>
 
-	count = 0;
-	while (s[count] != '\0')
-	{
-		(*f)(count, &s[count]);
-		count++;
-	}
+void	ft_putchar_fd(char c, int fd)
+{
+	write(fd, &c, 1);
 }
