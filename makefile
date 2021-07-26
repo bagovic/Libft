@@ -6,7 +6,7 @@
 #    By: bagovic <bagovic@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/06 15:12:24 by bagovic           #+#    #+#              #
-#    Updated: 2021/07/26 18:36:50 by bagovic          ###   ########.fr        #
+#    Updated: 2021/07/26 19:04:11 by bagovic          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,20 +61,7 @@ fclean: clean
 re: fclean all
 
 
-
-UT_SRC = main.c\
-unittest.c
-
 f: fclean
 	cd /Users/bagovic/Desktop/Libft//libft-unit-test-master ; make re ; make f ; cd ..
-	make fclean
 	bash /Users/bagovic/Desktop/Libft/libft-war-machine-master/grademe.sh
 	norminette $(SRC) libft.h
-
-ft:
-	$(CC) $(CFLAGS) -o unittest.o $(UT_SRC) $(SRC)
-	./unittest.o
-
-qt: fclean
-	$(CC) -o unittest.o $(UT_SRC) $(SRC)
-	./unittest.o
