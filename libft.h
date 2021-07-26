@@ -6,7 +6,7 @@
 /*   By: bagovic <bagovic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 14:54:33 by bagovic           #+#    #+#             */
-/*   Updated: 2021/07/26 18:27:50 by bagovic          ###   ########.fr       */
+/*   Updated: 2021/07/26 18:36:36 by bagovic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@ void		*ft_memchr(const void *s, int c, size_t n);
 void		*ft_calloc(size_t count, size_t size);
 void		ft_striteri(char *s, void (*f)(unsigned int, char*));
 void		ft_putchar_fd(char c, int fd);
+void		ft_putstr_fd(char *s, int fd);
+void		ft_putendl_fd(char *s, int fd);
+void		ft_putnbr_fd(int n, int fd);
 int			ft_isalpha(int c);
 int			ft_isdigit(int c);
 int			ft_isalnum(int c);
