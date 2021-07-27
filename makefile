@@ -6,7 +6,7 @@
 #    By: bagovic <bagovic@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/06 15:12:24 by bagovic           #+#    #+#              #
-#    Updated: 2021/07/27 13:16:22 by bagovic          ###   ########.fr        #
+#    Updated: 2021/07/27 14:33:14 by bagovic          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,12 +47,16 @@ ft_putchar_fd.c\
 ft_putstr_fd.c\
 ft_putendl_fd.c\
 ft_putnbr_fd.c
+BONUSSRC = ft_lstnew.c
 
 all: $(NAME)
 
 $(NAME):
 	$(CC) $(CFLAGS) -c $(SRC)
 	ar r $(NAME) $(SRC:.c=.o)
+bonus: fclean
+	$(CC) $(CFLAGS) -c $(BONUSSRC)
+	@$(MAKE) all
 
 clean:
 	rm -f *.o

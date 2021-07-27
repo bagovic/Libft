@@ -6,7 +6,7 @@
 /*   By: bagovic <bagovic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 14:54:33 by bagovic           #+#    #+#             */
-/*   Updated: 2021/07/26 18:36:36 by bagovic          ###   ########.fr       */
+/*   Updated: 2021/07/27 14:33:15 by bagovic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,13 @@ char		*ft_strtrim(char const *s1, char const *set);
 char		*ft_itoa(int n);
 char		**ft_split(char const *s, char c);
 char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}				t_list;	
+
+t_list		*ft_lstnew(void *content);
 
 #endif
