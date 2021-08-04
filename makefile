@@ -6,7 +6,7 @@
 #    By: bagovic <bagovic@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/06 15:12:24 by bagovic           #+#    #+#              #
-#    Updated: 2021/07/27 14:33:14 by bagovic          ###   ########.fr        #
+#    Updated: 2021/08/03 18:27:57 by bagovic          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,8 @@ ft_putchar_fd.c\
 ft_putstr_fd.c\
 ft_putendl_fd.c\
 ft_putnbr_fd.c
-BONUSSRC = ft_lstnew.c
+BONUSSRC = ft_lstnew.c\
+ft_lstadd_front.c
 
 all: $(NAME)
 
@@ -69,3 +70,6 @@ f: fclean
 	cd /Users/bagovic/Documents/C/Libft/libft-unit-test-master ; make re ; make f ; cd ..
 	bash /Users/bagovic/Documents/C/Libft/libft-war-machine-master/grademe.sh
 	norminette $(SRC) libft.h
+
+ff: fclean
+	bash /Users/bagovic/Documents/C/Libft/libft-war-machine-master/grademe.sh -ob
