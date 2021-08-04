@@ -6,7 +6,7 @@
 /*   By: bagovic <bagovic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 14:54:33 by bagovic           #+#    #+#             */
-/*   Updated: 2021/08/04 17:03:55 by bagovic          ###   ########.fr       */
+/*   Updated: 2021/08/04 17:15:39 by bagovic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,9 @@ typedef struct s_list
 }				t_list;	
 
 t_list		*ft_lstnew(void *content);
+t_list		*ft_lstlast(t_list *lst);
+void		ft_lstadd_back(t_list **lst, t_list *new);
 void		ft_lstadd_front(t_list **lst, t_list *new);
 int			ft_lstsize(t_list *lst);
-t_list		*ft_lstlast(t_list *lst);
 
 #endif
