@@ -6,7 +6,7 @@
 #    By: bagovic <bagovic@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/06 15:12:24 by bagovic           #+#    #+#              #
-#    Updated: 2021/08/04 17:08:15 by bagovic          ###   ########.fr        #
+#    Updated: 2021/08/04 17:19:54 by bagovic          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,7 +51,8 @@ BONUSSRC = ft_lstnew.c\
 ft_lstadd_front.c\
 ft_lstsize.c\
 ft_lstlast.c\
-ft_lstadd_back.c
+ft_lstadd_back.c\
+ft_lstdelone.c
 
 all: $(NAME)
 
