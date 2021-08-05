@@ -6,7 +6,7 @@
 /*   By: bagovic <bagovic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 17:20:55 by bagovic           #+#    #+#             */
-/*   Updated: 2021/08/04 17:29:45 by bagovic          ###   ########.fr       */
+/*   Updated: 2021/08/05 16:31:38 by bagovic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,17 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	t_list	*current;
 	t_list	*next;
 
-	next = *lst;
-	while (next)
+	next = (*lst)->next;
+	while (*lst)
 	{
-		current = next;
-		next = next->next;
-		del(current->content);
-		free(current);
+		next = (*lst)->next;
+		del((*lst)->content);
+		free(*lst);
+		*lst = next; 
 	}
+	next = NULL;
+	*lst = NULL;
 	lst = NULL;
 }
