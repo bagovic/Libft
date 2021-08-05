@@ -6,7 +6,7 @@
 #    By: bagovic <bagovic@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/06 15:12:24 by bagovic           #+#    #+#              #
-#    Updated: 2021/08/05 16:36:19 by bagovic          ###   ########.fr        #
+#    Updated: 2021/08/05 16:55:23 by bagovic          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,7 +54,8 @@ ft_lstlast.c\
 ft_lstadd_back.c\
 ft_lstdelone.c\
 ft_lstclear.c\
-ft_lstiter.c
+ft_lstiter.c\
+ft_lstmap.c
 
 all: $(NAME)
 
