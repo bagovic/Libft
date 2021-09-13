@@ -6,41 +6,46 @@
 /*   By: bagovic <bagovic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 18:36:53 by bagovic           #+#    #+#             */
-/*   Updated: 2021/09/13 15:43:49 by bagovic          ###   ########.fr       */
+/*   Updated: 2021/09/13 16:30:29 by bagovic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include "libft.h"
 
-long	ft_reverse_n(long n)
+int	ft_reverse_n(long *n)
 {
 	long	n_reversed;
+	int		n_size;
 	short	is_neg;
 
 	n_reversed = 0;
+	n_size = 0;
 	is_neg = 0;
-	if (n < 0)
+	if (*n < 0)
 	{
-		n *= -1;
+		*n *= -1;
 		is_neg = 1;
 	}
-	if (n == 0)
+	if (*n == 0)
 		return (0);
-	while (n != 0)
+	while (*n != 0)
 	{
-		n_reversed = n_reversed * 10 + n % 10;
-		n /= 10;
+		n_reversed = n_reversed * 10 + *n % 10;
+		*n /= 10;
+		n_size++;
 	}
 	if (is_neg == 1)
 		n_reversed *= -1;
-	return (n_reversed);
+	*n = n_reversed;
+	return (n_size);
 }
 
 void	ft_putnbr_fd(int n, int fd)
 {
 	long	nlong;
 	int		digit;
+	int		nsize;
 
 	nlong = n;
 	digit = 0;
@@ -53,11 +58,12 @@ void	ft_putnbr_fd(int n, int fd)
 		write(fd, "-", 1);
 		nlong *= -1;
 	}
-	nlong = ft_reverse_n(nlong);
-	while (nlong != 0)
+	nsize = ft_reverse_n(&nlong);
+	while (nsize != 0)
 	{
 		digit = nlong % 10 + '0';
 		write(fd, &digit, 1);
 		nlong /= 10;
+		nsize--;
 	}
 }
