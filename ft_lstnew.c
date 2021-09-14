@@ -6,7 +6,7 @@
 /*   By: bagovic <bagovic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 13:28:38 by bagovic           #+#    #+#             */
-/*   Updated: 2021/09/13 18:07:14 by bagovic          ###   ########.fr       */
+/*   Updated: 2021/09/14 16:26:07 by bagovic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,6 @@ t_list	*ft_lstnew(void *content)
 	if (lst == NULL)
 		return (NULL);
 	lst->content = content;
+	lst->next = NULL;
 	return (lst);
 }
