@@ -6,7 +6,7 @@
 #    By: bagovic <bagovic@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/06 15:12:24 by bagovic           #+#    #+#              #
-#    Updated: 2021/09/14 16:31:26 by bagovic          ###   ########.fr        #
+#    Updated: 2021/09/15 15:55:03 by bagovic          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,8 +54,7 @@ ft_lstlast.c\
 ft_lstadd_back.c\
 ft_lstdelone.c\
 ft_lstclear.c\
-ft_lstiter.c\
-ft_lstmap.c
+ft_lstiter.c
 
 all: $(NAME)
 
@@ -72,16 +71,3 @@ clean:
 fclean: clean
 	rm -f $(NAME)
 re: fclean all
-
-
-f: fclean
-	cd /Users/bagovic/Documents/C/Libft/libft-unit-test-master ; make re ; make f ; cd ..
-	bash /Users/bagovic/Documents/C/Libft/libft-war-machine-master/grademe.sh
-	norminette $(SRC) libft.h
-
-ff: fclean
-	bash /Users/bagovic/Documents/C/Libft/libft-war-machine-master/grademe.sh -ob
-
-fu:	fclean
-	cd /Users/bagovic/Documents/C/Libft/libft-unit-test-master ; make re ; make f ; cd ..
-	make fclean
