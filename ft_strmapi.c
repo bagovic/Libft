@@ -6,7 +6,7 @@
 /*   By: bagovic <bagovic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 18:17:59 by bagovic           #+#    #+#             */
-/*   Updated: 2021/07/23 18:28:09 by bagovic          ###   ########.fr       */
+/*   Updated: 2021/09/19 15:33:35 by bagovic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,10 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char			*strmapi;
 	unsigned int	count;
 
+	if (s == NULL)
+		return (NULL);
 	strmapi = malloc(ft_strlen(s) + 1);
-	if (strmapi == NULL || s == NULL)
+	if (strmapi == NULL)
 		return (NULL);
 	count = 0;
 	while (s[count] != '\0')

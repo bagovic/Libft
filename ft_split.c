@@ -6,7 +6,7 @@
 /*   By: bagovic <bagovic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/22 14:44:07 by bagovic           #+#    #+#             */
-/*   Updated: 2021/07/23 13:57:19 by bagovic          ###   ########.fr       */
+/*   Updated: 2021/09/19 15:25:12 by bagovic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ char	**ft_split(char const *s, char c)
 	if (arr == NULL || s == NULL)
 		return (NULL);
 	arr[subs - 1] = NULL;
-	while (++count <= ft_strlen(s) && ft_strlen(s) > 1)
+	while (++count <= ft_strlen(s) && s[start] != '\0')
 	{
 		if (s[start] != c && (s[count] == c || s[count] == '\0'))
 		{
