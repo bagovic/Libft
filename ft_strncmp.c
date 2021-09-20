@@ -38,7 +38,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 			return (0);
 		counter++;
 	}
-	if (n < 0)
+	if (counter == 0 && n != 0)
 		return (-1);
 	return (0);
 }
