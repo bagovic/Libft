@@ -6,7 +6,7 @@
 /*   By: bagovic <bagovic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 16:06:05 by bagovic           #+#    #+#             */
-/*   Updated: 2021/07/14 19:38:07 by bagovic          ###   ########.fr       */
+/*   Updated: 2021/09/20 15:43:26 by bagovic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 			return (0);
 		counter++;
 	}
+	if (n < 0)
+		return (-1);
 	return (0);
 }

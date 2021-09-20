@@ -6,7 +6,7 @@
 /*   By: bagovic <bagovic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 15:29:20 by bagovic           #+#    #+#             */
-/*   Updated: 2021/07/14 15:57:39 by bagovic          ###   ########.fr       */
+/*   Updated: 2021/09/20 15:25:16 by bagovic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strrchr(const char *s, int c)
 		slen++;
 	while (slen >= 0)
 	{
-		if (s[slen] == c)
+		if (s[slen] == (char) c)
 			return ((char *)&s[slen]);
 		slen--;
 	}
