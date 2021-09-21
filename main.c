@@ -3,7 +3,9 @@
 
 int main()
 {
-	printf("strncmp: %i \n", strncmp("1234", "1235", -5));
-	printf("ft_strncmp: %i", ft_strncmp("1234", "1235", -1));
+	char dest[30]; memset(dest, 'C', 5);
+	char * src = (char *)"AAAAAAAAA";
+	//printf("strlcat: %i \n", strlcat(dest, src, -1));
+	printf("ft_strlcat: %zu", ft_strlcat(dest, src, -1));
 	return (0);
 }

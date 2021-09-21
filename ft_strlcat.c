@@ -23,10 +23,10 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	dstlen = ft_strlen(dst);
 	srclen = ft_strlen(src);
 	c = dstlen;
-	if (dstlen >= dstsize)
+	if ((unsigned long) dstlen >= (unsigned long) dstsize)
 		return (dstsize + srclen);
 	totallen = dstlen + srclen;
-	if ((int)dstsize - (int)dstlen > 0)
+	if ((unsigned long) dstsize - (unsigned long) dstlen > 0)
 	{
 		while (c - dstlen < dstsize - dstlen - 1 && src[c - dstlen] != '\0')
 		{

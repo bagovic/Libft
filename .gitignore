@@ -1,1 +1,5 @@
 libftTester/
+libft-unit-test/
+*.dSYM
+a.out
+main.c
