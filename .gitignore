@@ -1,5 +1,6 @@
 libftTester/
 libft-unit-test/
+FT_SPLIT_TESTER/
 *.dSYM
 a.out
 main.c
