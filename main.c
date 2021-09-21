@@ -3,9 +3,7 @@
 
 int main()
 {
-	char haystack[30] = "aaabcabcd";
-	char needle[10] = "aabc";
-	printf("strlcat: %s \n", strnstr(haystack, needle, -1));
-	printf("ft_strlcat: %s", ft_strnstr(haystack, needle, -1));
+	printf("substr: %s \n", ft_substr("tripouille", 0, 42000));
+	printf("ft_substr: %s", ft_substr("tripouille", 0, 42000));
 	return (0);
 }
