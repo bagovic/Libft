@@ -6,7 +6,7 @@
 /*   By: bagovic <bagovic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/21 12:37:28 by bagovic           #+#    #+#             */
-/*   Updated: 2021/09/19 15:39:50 by bagovic          ###   ########.fr       */
+/*   Updated: 2021/09/21 16:33:57 by bagovic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,15 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include "libft.h"
+
+static	char	*ft_remove_leaks(char *arr)
+{
+	char	*arrcpy;
+
+	arrcpy = ft_strdup(arr);
+	free(arr);
+	return (arrcpy);
+}
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
@@ -41,5 +50,5 @@ char	*ft_strtrim(char const *s1, char const *set)
 			len = ft_strlen(trimstr);
 		}
 	}
-	return (ft_strdup(trimstr));
+	return (ft_remove_leaks(trimstr));
 }
