@@ -3,9 +3,9 @@
 
 int main()
 {
-	char dest[30]; memset(dest, 'C', 5);
-	char * src = (char *)"AAAAAAAAA";
-	//printf("strlcat: %i \n", strlcat(dest, src, -1));
-	printf("ft_strlcat: %zu", ft_strlcat(dest, src, -1));
+	char haystack[30] = "aaabcabcd";
+	char needle[10] = "aabc";
+	printf("strlcat: %s \n", strnstr(haystack, needle, -1));
+	printf("ft_strlcat: %s", ft_strnstr(haystack, needle, -1));
 	return (0);
 }
