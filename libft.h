@@ -6,13 +6,14 @@
 /*   By: bagovic <bagovic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 14:54:33 by bagovic           #+#    #+#             */
-/*   Updated: 2021/09/13 18:07:22 by bagovic          ###   ########.fr       */
+/*   Updated: 2021/09/21 18:09:36 by bagovic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <stdio.h>
+# include <stdlib.h>
 
 void		*ft_memset(void *b, int c, size_t len);
 void		ft_bzero(void *s, size_t n);
