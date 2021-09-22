@@ -6,13 +6,20 @@
 /*   By: bagovic <bagovic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/21 12:37:28 by bagovic           #+#    #+#             */
-/*   Updated: 2021/09/21 18:10:49 by bagovic          ###   ########.fr       */
+/*   Updated: 2021/09/22 12:33:32 by bagovic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include "libft.h"
+
+/****
+ * Algorithm:
+ * 
+ * 	1. 
+ ****/
+
 
 // static	char	*ft_remove_leaks(char *arr)
 // {
@@ -25,7 +32,6 @@
 
 size_t	ft_count_set_chars(char const *s1, char const *set)
 {
-	size_t	newlen;
 	size_t	iter;
 	size_t	setiter;
 	size_t	setcount;
@@ -38,13 +44,15 @@ size_t	ft_count_set_chars(char const *s1, char const *set)
 		while (setiter < ft_strlen(set))
 		{
 			if (s1[iter] == set[setiter])
+			{
 				setcount++;
+				break ;
+			}
 			setiter++;
 		}
 		iter++;
 	}
-	newlen = ft_strlen(s1) - setcount;
-	return (newlen);
+	return (ft_strlen(s1) - setcount);
 }
 // ┌──────────────────────────────────────────────────────────────────────────────┐
 // │                                                                              │
@@ -64,7 +72,6 @@ size_t	ft_count_set_chars(char const *s1, char const *set)
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*trimstr;
-	size_t	s1len;
 	size_t	iter_count;
 	size_t	setiter_count;
 
@@ -73,7 +80,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 	trimstr = malloc(ft_count_set_chars(s1, set) + 1);
 	if (trimstr == NULL)
 		return (NULL);
-	s1len = ft_strlen(s1);
 	iter_count = 0;
 	while (iter_count < ft_strlen(s1))
 	{
@@ -82,25 +88,29 @@ char	*ft_strtrim(char const *s1, char const *set)
 		{
 			if (s1[iter_count] == set[setiter_count])
 			{
-				iter_count++;
 				setiter_count = -1;
 				break ;
 			}
 			setiter_count++;
 		}
 		if ((long) setiter_count != -1)
-			trimstr[iter_count] = s1[iter_count];
+			trimstr = ft_strjoin(trimstr, &s1[iter_count]);
 		iter_count++;
 	}
+	trimstr[ft_count_set_chars(s1, set)] = '\0';
 	return (trimstr);
 }
 
-// int	main()
-// {
-// 	char *s1 = "   \t  \n\n \t\t  \n\n\nHello \t  Please\n Trim me !\n   \n \n \t\t\n  ";
-// 	char *s2 = "Hello \t  Please\n Trim me !";
-// 	char *ret = ft_strtrim(s1, " \n\t");
-// }
+int	main()
+{
+	char *s1 = "   \t  \n\n \t\t  \n\n\nHello \t  Please\n Trim me !\n   \n \n \t\t\n  ";
+	size_t s1len = ft_strlen(s1);
+	char *s2 = "Hello \t  Please\n Trim me !";
+	size_t s2len = ft_strlen(s2);
+	char *ret = ft_strtrim(s1, " \n\t");
+	size_t retlen = ft_strlen(ret);
+	printf("%s", ret);
+}
 
 // char	*ft_strtrim(char const *s1, char const *set)
 // {
